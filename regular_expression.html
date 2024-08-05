@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="user_name">
+    <p id="error_print"></p>
+    <button type="submit" onclick="func()">Submit</button>
+
+
+<script>
+    function func() {
+        var user_name = document.getElementById("user_name").value;
+        var exp = /^[A-z]{3,20}$/gm
+       
+        if (exp.test(user_name)) {
+            document.getElementById("error_print").innerHTML = "Username is valid";
+            document.getElementById("error_print").style.color = "green";
+        }
+        else{
+        document.getElementById("error_print").innerHTML = "Username is invalid";
+        document.getElementById("error_print").style.color = "red"
+        }
+
+    }
+</script>
+
+</body>
+</html>
