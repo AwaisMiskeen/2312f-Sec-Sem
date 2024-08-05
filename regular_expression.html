@@ -6,12 +6,21 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- name -->
     <input type="text" name="" id="user_name">
     <p id="error_print"></p>
+
+    <!-- email -->
+    <input type="text" email="" id="user_email">
+    <p id="e_error_print"></p>
+
     <button type="submit" onclick="func()">Submit</button>
 
 
 <script>
+
+    // Name function
+
     function func() {
         var user_name = document.getElementById("user_name").value;
         var exp = /^[A-z]{3,20}$/gm
@@ -26,6 +35,26 @@
         }
 
     }
+
+    // email function
+
+    function func() {
+        var user_email = document.getElementById("user_email").value;
+        var exp =/^[A-z]{3,10}[0-9]{1,5}[A-z]{1,5}@[A-z]{1,15}.[A-z]{2,5}/gm;
+       
+        if (exp.test(user_email)) {
+            document.getElementById("e_error_print").innerHTML = "User_Email is valid";
+            document.getElementById("e_error_print").style.color = "green";
+        }
+        else{
+        document.getElementById("e_error_print").innerHTML = "User_Email is invalid";
+        document.getElementById("e_error_print").style.color = "red"
+        }
+
+    }
+
+    // ^[+0-9-]{4,6}[0-9]{7}
+
 </script>
 
 </body>
