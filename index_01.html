@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter Name" name="name" id="name">
+    <input type="text"  placeholder="Enter Email" name="email" id="email">
+    <button type="submit" onclick="save()">Save</button>
+    <button type="submit" onclick="get()">Get</button>
+
+    <table  id="table_id" border="2px">
+        
+    </table>
+
+    <script>
+        var a = [];
+        function save() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            var obj = {
+                name: name,
+                email: email
+            }
+            a.push(obj);
+            localStorage.setItem("user",JSON.stringify(a) );
+        }
+
+        function get() {
+            var get = JSON.parse(localStorage.getItem("user"));
+            var table = "<tr><th>Name</th><th>Email</th></tr>";
+
+            for (let i = 0; i < get.length; i++) {
+                table += "<tr><td>" + get[i].name + "</td><td>" + get[i].email + "</td></tr>";
+                
+            }
+            document.getElementById("table_id").innerHTML = table;
+        }
+
+
+
+    </script>
+</body>
+</html>
