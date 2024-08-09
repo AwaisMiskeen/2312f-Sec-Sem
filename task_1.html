@@ -6,20 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" placeholder="Enter the word ..." id="word">
-    <button type="button" onclick="func()">Submit</button>
+    <h1>search Fruit Name ...</h1>
+    <input type="text" placeholder="Enter Fruit Name ..." id="word">
+    <button type="button" onclick="fruitfunc()">Submit</button>
     <p id="result"></p>
 
     <script>
-        function func() {
-            var names = ["Asad","Tariq","Daniyal"];
+        function fruitfunc() {
+            var fruit = ["mango" , "peach" , "papaya" , " apple" , "banana" , "orange" , "graps"];
             var input = document.getElementById("word").value;
             var result = document.getElementById("result");
 
-            if (names.includes(input)) {
+            if (fruit.includes(input)) {
                 result.textContent = input;
             } else {
-                result.textContent = "No match found";
+                result.textContent = "No Fruit Match ";
             }
         }
     </script>
