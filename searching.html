@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input autocomplete="text" class="form-control" id="ID_Input" placeholder="Enter Movie" >
+    <button type="button" class="btn btn-danger mt-3" onclick="getmovie()">Submit</button>
+    <div id="movieDetails">
+    </div>
+    <script>
+        function getmovie() {
+        var searchTerm = document.getElementById("ID_Input").value;
+        fetch(`http://www.omdbapi.com/?t=${searchTerm}&apikey=23ceb873`) 
+        .then(response => response.json()) 
+        .then(data =>{ 
+        var { Title, Year, Rated, Released, Runtime, Genre, Director, Actors, Plot, Language, Poster } = data;
+         document.getElementById("movieDetails").innerHTML =`
+
+    <h2>${Title} (${Year})</h2>
+    <img src="${Poster}" alt="Movie Poster">
+    <ul>
+    <li><strong>Rated:</strong> ${Rated}</li>
+    <li><strong>Released:</strong> $(Released)</li>
+    <li><strong>Runtime:</strong> ${Runtime}</li>
+    <li><strong>Genre:</strong> ${Genre}</li> 
+    <li><strong>Director:</strong> ${Director}</li>
+    <li><strong>Actors:</strong> ${Actors}</li>
+    <li><strong>Plot:</strong> ${Plot}</li>
+    <li><strong>Language:</strong> ${Language}</li>
+    </ul>
+    ;`
+})
+        }
+    </script>
+</body>
+</html>
