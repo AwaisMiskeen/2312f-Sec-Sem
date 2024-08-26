@@ -1,0 +1,138 @@
+ /*Design all CSS By Using chatgpt */
+ 
+ 
+ /* General styling for the calculator container */
+ .calculator {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-color: #1e1e1e;
+}
+
+/* Styling for the display area */
+#display {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 15px;
+    text-align: right;
+    font-size: 2em;
+    padding: 15px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #333;
+    color: #f1f1f1;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+/* Grid layout for the buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Styling for each button */
+button {
+    width: 100%;
+    height: 70px;
+    font-size: 1.6em;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: #2c2c2c;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #3d3d3d;
+}
+
+/* Active effect for buttons */
+button:active {
+    background-color: #4d4d4d;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(2px);
+}
+
+/* Special styling for the 'clear' button */
+#clear {
+    background-color: #e53935;
+    color: #fff;
+    grid-column: span 4; /* Full width */
+}
+
+/* Hover effect for 'clear' button */
+#clear:hover {
+    background-color: #c62828;
+}
+
+/* Active effect for 'clear' button */
+#clear:active {
+    background-color: #b71c1c;
+}
+
+/* Special styling for the 'equals' button */
+button[aria-label="="] {
+    background-color: #4caf50;
+    color: #fff;
+    grid-column: span 4; /* Full width */
+}
+
+/* Hover effect for 'equals' button */
+button[aria-label="="]:hover {
+    background-color: #388e3c;
+}
+
+/* Active effect for 'equals' button */
+button[aria-label="="]:active {
+    background-color: #2c6b2f;
+}
+
+/* Special styling for operator buttons */
+button[aria-label="/"],
+button[aria-label="*"],
+button[aria-label="-"],
+button[aria-label="+"] {
+    background-color: #1c1c1c;
+    color: #f1f1f1;
+    font-weight: bold;
+}
+
+/* Hover effect for operator buttons */
+button[aria-label="/"]:hover,
+button[aria-label="*"]:hover,
+button[aria-label="-"]:hover,
+button[aria-label="+"]:hover {
+    background-color: #2d2d2d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .calculator {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #display {
+        font-size: 1.8em;
+    }
+
+    button {
+        height: 60px;
+        font-size: 1.4em;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+}
+
+   
